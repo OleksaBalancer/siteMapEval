@@ -1,0 +1,53 @@
+﻿
+@{
+    ViewBag.Title = "Evaluate URL sitemap";
+}
+
+
+<div class="panel-group">
+    <div class="panel panel-default">
+        <div class="panel-heading" id="historyHeader" data-toggle="collapse" data-target="#historyList">
+            <h4 class="panel-title">History
+            </h4>
+        </div>
+        <div id="historyList" class="panel-collapse collapse">
+            <div id="historyBody" class="panel-body list-group ">
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<input type="text" id="txtAddress" value="" placeholder="Enter url to be evaluated" />
+<input type="button" id="btnEval" value="Eval" />
+<input type="button" id="btnSave" value="Save" />
+<p class="text-danger" id="errors"></p>
+
+
+
+<div id="bars">
+
+</div>
+
+<div>
+    <table id="tblResults" class="table-bordered">
+        <thead>
+            <tr>
+                <td>#</td>
+                <td>URL</td>
+                <td>Min, ms</td>
+                <td>Max, ms</td>
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+</div>
+
+
+@section Scripts
+{
+    @Scripts.Render("~/bundles/Scripts")
+@Scripts.Render("~/bundles/moment")
+
+
+}
