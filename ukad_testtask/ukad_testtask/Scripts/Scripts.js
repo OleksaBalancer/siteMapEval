@@ -58,6 +58,7 @@ $(document).ready(function () {
             contentType: 'application/json; charset=utf-8',
             cache: false,
             success: function (data) {
+                $('#historyBody').html('');
                 $.each(data, function (index, value) {
                     var created = moment(value.Created).format('DD/MM/YYYY HH:mm:ss');
                     $('#historyBody').append("<div class='list-group-item' name='historyEntry' ><input type='hidden' name='evaluationId'  value='" + value.Id + "' /><span>" + value.InitialURL + " " + created + "</span></div>");
@@ -86,6 +87,7 @@ $(document).ready(function () {
             error: function (xhr) {
             }
         });
+        $('#historyBody').html('Getting history...');
     }
 
     $('#btnEval').click(function () {
